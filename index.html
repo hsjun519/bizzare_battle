@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101311">
+  <meta name="description" content="철학과 자본이 맞붙는 픽셀 아트 대전 게임. 당신의 챔피언을 선택하세요.">
+  <title>Bizzare Battle — 철학과 자본의 한판 승부</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Bizzare Battle 홈"><span class="brand-mark" aria-hidden="true">B<span>↗</span></span> BIZZARE<span class="brand-light">BATTLE</span></a>
+    <nav aria-label="메인 메뉴"><span class="nav-current">THE ARENA <span class="tiny-dot"></span></span><button id="help-button" class="nav-button">플레이 방법 <span>↗</span></button></nav>
+    <button id="sound-button" class="sound-button" aria-label="게임 사운드 켜기" aria-pressed="false"><span id="sound-icon" aria-hidden="true">♪</span><span id="sound-label">SOUND OFF</span></button>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><div class="eyebrow"><span class="tiny-dot"></span> THE UNLIKELIEST FIGHTING CLUB</div><h1 id="page-title">BIG IDEAS.<br><span>BIGGER FIGHTS.</span></h1><p>철학과 자본의 한판 승부. 당신의 챔피언은 누구인가요?</p></div>
+      <div class="intro-side"><span class="issue">EST. 2026 <span>VOL. 001</span></span><div class="hero-stamp">6 FIGHTERS<br>∞ POSSIBILITIES<span>THINK. FIGHT. REPEAT.</span></div></div>
+    </section>
+
+    <section class="arena-layout" aria-label="대전 경기장">
+      <aside id="fighter-info" class="fighter-info">
+        <div class="panel-eyebrow"><span class="tiny-dot"></span> YOUR FIGHTER <span id="fighter-number">01 / 06</span></div>
+        <div id="fighter-category" class="category">THE VISIONARY</div><h2 id="fighter-name">젠슨 황</h2><p id="fighter-en">JENSEN HUANG</p><blockquote id="fighter-quote">“미래는 연산 중이다.”</blockquote>
+        <div class="fighter-stats" id="fighter-stats"></div>
+        <div class="special-card"><span class="special-icon" aria-hidden="true">✦</span><div><span class="small-label">SIGNATURE MOVE</span><strong id="special-name">GPU 오버드라이브</strong><p id="special-description">고속 칩 에너지로 상대를 압도한다.</p></div><kbd>L</kbd></div>
+        <div class="info-bottom"><span>CLASS</span><strong id="fighter-class">테크 파이터</strong></div>
+      </aside>
+
+      <div class="arena-shell">
+        <div class="arena-topline"><span><span class="tiny-dot"></span> <span id="arena-mode-label">FIGHTER PREVIEW</span></span><span id="stage-label">NEON AGORA</span></div>
+        <div class="canvas-wrap" id="canvas-wrap">
+          <canvas id="arena" width="960" height="510" role="img" aria-label="선택한 캐릭터와 픽셀 아트 경기장"></canvas>
+          <div id="preview-overlay" class="preview-overlay"><span class="preview-label">PLAYER 01</span><div class="preview-name" id="preview-name">HUANG<span>THE VISIONARY</span></div><span class="preview-side">READY TO<br>CHANGE THE GAME?</span></div>
+          <div id="hud" class="hud" hidden>
+            <div class="hud-player"><div><strong id="p1-name"></strong><span id="p1-wins">○ ○</span></div><div class="health-track" role="progressbar" aria-label="플레이어 1 체력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="p1-health"><span></span></div><div class="meter-track"><span id="p1-meter"></span></div><span class="meter-label" id="p1-meter-label">SPECIAL READY · L</span></div>
+            <div class="hud-clock"><strong id="timer">60</strong><span id="round-label">ROUND 01</span></div>
+            <div class="hud-player hud-player-right"><div><strong id="p2-name"></strong><span id="p2-wins">○ ○</span></div><div class="health-track" role="progressbar" aria-label="플레이어 2 체력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="p2-health"><span></span></div><div class="meter-track"><span id="p2-meter"></span></div><span class="meter-label" id="p2-meter-label">SPECIAL READY</span></div>
+          </div>
+          <div class="game-overlay" id="game-overlay" hidden><span id="overlay-eyebrow">ROUND 01</span><h2 id="overlay-title">READY?</h2><p id="overlay-detail"></p><div id="overlay-actions" hidden><button id="continue-button" class="primary-button">계속하기 <span>→</span></button><button id="roster-button" class="secondary-button">캐릭터 선택</button></div></div>
+          <div id="live-announcement" class="sr-only" role="status" aria-live="polite"></div>
+        </div>
+        <div class="arena-bottomline"><span id="arena-hint"><span class="key-hint">← →</span> 아래에서 캐릭터를 선택하세요</span><span class="pixel-badge">100% PIXEL. 100% PERSONALITY.</span><button id="pause-button" class="text-button" hidden>일시정지 <kbd>ESC</kbd></button></div>
+      </div>
+    </section>
+
+    <section class="roster-section" aria-labelledby="roster-heading">
+      <div class="section-heading"><h2 id="roster-heading"><span>01</span> CHOOSE YOUR FIGHTER</h2><span class="section-aside">역사를 쓴 사람들, 이제 링에 오르다.</span></div>
+      <div id="roster" class="roster" role="group" aria-label="플레이어 캐릭터 선택"></div>
+    </section>
+
+    <section class="match-section" aria-label="경기 설정">
+      <div class="match-settings">
+        <div class="setting"><label for="mode">GAME MODE</label><select id="mode"><option value="cpu">혼자 하기 · VS CPU</option><option value="local">함께 하기 · 2 PLAYERS</option></select></div>
+        <div class="setting"><label for="opponent">OPPONENT</label><select id="opponent"></select></div>
+        <div class="setting" id="difficulty-setting"><label for="difficulty">DIFFICULTY</label><select id="difficulty"><option value="easy">워밍업 · EASY</option><option value="normal" selected>한판 승부 · NORMAL</option><option value="hard">끝장 토론 · HARD</option></select></div>
+        <div class="setting"><label for="stage">BATTLEGROUND</label><select id="stage"><option value="agora">네온 아고라</option><option value="city">자본의 스카이라인</option><option value="academy">달빛 아카데미</option></select></div>
+      </div>
+      <button id="start-button" class="start-button"><span class="start-icon" aria-hidden="true">↗</span><span>LET’S BATTLE<small>대전 시작 · 3판 2선승</small></span><kbd>ENTER</kbd></button>
+    </section>
+
+    <div class="controls-strip" id="controls-strip"><span class="controls-title">QUICK CONTROLS</span><span><kbd>A</kbd><kbd>D</kbd> 이동</span><span><kbd>W</kbd> 점프</span><span><kbd>S</kbd> 앉기</span><span><kbd>J</kbd> 펀치</span><span><kbd>K</kbd> 킥</span><span><kbd>L</kbd> 필살기</span><span><kbd>SHIFT</kbd> 방어</span></div>
+    <div class="touch-controls" id="touch-controls" hidden aria-label="터치 게임 조작"><div><button data-control="left" aria-label="왼쪽 이동">◀</button><button data-control="jump" aria-label="점프">↑</button><button data-control="right" aria-label="오른쪽 이동">▶</button><button data-control="block" aria-label="방어">방어</button></div><div><button data-control="punch">펀치</button><button data-control="kick">킥</button><button data-control="special" class="touch-special">필살기</button></div></div>
+  </main>
+  <footer><span><span class="tiny-dot"></span> MADE FOR THE LOVE OF THE GAME.</span><span>실존 인물을 모티브로 한 창작 아케이드 · 비공식 팬 게임</span><span>BIZZARE BATTLE © 2026</span></footer>
+
+  <dialog id="help-dialog" aria-labelledby="help-title"><button id="close-help" class="dialog-close" aria-label="도움말 닫기">×</button><span class="eyebrow">A QUICK FIELD GUIDE</span><h2 id="help-title">생각은 깊게.<br><span>공격은 빠르게.</span></h2><p>60초 안에 상대의 체력을 소진하세요. 먼저 2라운드를 이기면 챔피언입니다. 시간이 끝나면 남은 체력으로 승패를 결정합니다.</p><div class="help-columns"><div><h3>PLAYER 01</h3><dl><dt>이동 / 점프 / 앉기</dt><dd><kbd>A</kbd><kbd>D</kbd> / <kbd>W</kbd> / <kbd>S</kbd></dd><dt>펀치 / 킥 / 필살기</dt><dd><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd></dd><dt>방어</dt><dd><kbd>왼쪽 SHIFT</kbd></dd></dl></div><div><h3>PLAYER 02</h3><dl><dt>이동 / 점프 / 앉기</dt><dd><kbd>←</kbd><kbd>→</kbd> / <kbd>↑</kbd> / <kbd>↓</kbd></dd><dt>펀치 / 킥 / 필살기</dt><dd><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></dd><dt>방어</dt><dd><kbd>오른쪽 SHIFT</kbd></dd></dl></div></div><p class="help-tip"><strong>✦ 필살기 게이지</strong> 공격과 시간 경과로 충전됩니다. 가득 차면 캐릭터만의 필살기를 사용하세요. 방어는 전방 공격의 피해를 줄이지만, 앉으면 이동이 느려집니다.</p><p class="help-tip">ESC로 일시정지 · 화면을 벗어나면 자동 일시정지 · 터치 기기에서는 하단 조작 버튼을 이용하세요. 2인 모드는 키보드가 필요합니다.</p><button id="help-done" class="primary-button">준비 완료 <span>→</span></button></dialog>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
