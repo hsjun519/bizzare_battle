@@ -1,10 +1,275 @@
 export const FIGHTERS = [
-  { id: 'huang', name: '젠슨 황', en: 'JENSEN HUANG', short: 'HUANG', category: 'THE VISIONARY', className: '테크 파이터', faction: 'CAPITAL', color: '#c7f77a', skin: '#dfad83', hair: '#9aa09d', outfit: '#242a2c', quote: '미래는 연산 중이다.', special: 'GPU 오버드라이브', description: '3연발 칩 에너지로 상대를 압도한다.', power: 3, speed: 5, reach: 3, projectile: 'chip', damage: 8, velocity: 570 },
-  { id: 'musk', name: '일론 머스크', en: 'ELON MUSK', short: 'MUSK', category: 'THE DISRUPTOR', className: '우주 개척자', faction: 'CAPITAL', color: '#adadff', skin: '#e5b59d', hair: '#58493f', outfit: '#e5e8e6', quote: '다음 라운드는 화성에서.', special: '스타십 런치', description: '거대한 로켓을 발사해 판을 뒤집는다.', power: 5, speed: 2, reach: 4, projectile: 'rocket', damage: 26, velocity: 355 },
-  { id: 'socrates', name: '소크라테스', en: 'SOCRATES', short: 'SOCRATES', category: 'THE QUESTIONER', className: '논쟁의 달인', faction: 'PHILOSOPHY', color: '#e8c487', skin: '#cba386', hair: '#c8c9b9', outfit: '#dfd7bc', quote: '너 자신을 알라. 그리고 막아라.', special: '산파술의 파동', description: '거대한 질문의 파동으로 틈을 만든다.', power: 3, speed: 3, reach: 5, projectile: 'question', damage: 20, velocity: 420 },
-  { id: 'plato', name: '플라톤', en: 'PLATO', short: 'PLATO', category: 'THE IDEALIST', className: '이데아 소환사', faction: 'PHILOSOPHY', color: '#87d5e8', skin: '#d5a580', hair: '#4e4037', outfit: '#90b9d2', quote: '완벽한 한 방은 존재한다.', special: '이데아의 빛', description: '빛의 결정 두 개로 이상을 현실로.', power: 4, speed: 3, reach: 4, projectile: 'crystal', damage: 12, velocity: 465 },
-  { id: 'nietzsche', name: '니체', en: 'FRIEDRICH NIETZSCHE', short: 'NIETZSCHE', category: 'THE REBEL', className: '초인의 의지', faction: 'PHILOSOPHY', color: '#ee9891', skin: '#e0b392', hair: '#493c34', outfit: '#3d3540', quote: '나를 쓰러뜨리지 못하면, 더 강해진다.', special: '초인의 돌진', description: '의지의 힘으로 순식간에 거리를 좁힌다.', power: 5, speed: 4, reach: 2, projectile: 'dash', damage: 23, velocity: 720 },
-  { id: 'buffett', name: '워런 버핏', en: 'WARREN BUFFETT', short: 'BUFFETT', category: 'THE STRATEGIST', className: '가치 투자자', faction: 'CAPITAL', color: '#f1cd68', skin: '#e3b89b', hair: '#e1ded1', outfit: '#344657', quote: '좋은 한 방은 기다림에서 온다.', special: '복리의 한 방', description: '황금 코인을 날려 묵직한 수익을 낸다.', power: 4, speed: 2, reach: 5, projectile: 'coin', damage: 22, velocity: 385 },
+  {
+    id: "huang",
+    name: "젠슨 황",
+    en: "JENSEN HUANG",
+    short: "HUANG",
+    category: "THE VISIONARY",
+    className: "테크 파이터",
+    faction: "CAPITAL",
+    color: "#c7f77a",
+    skin: "#dfad83",
+    hair: "#9aa09d",
+    outfit: "#242a2c",
+    quote: "미래는 연산 중이다.",
+    special: "GPU 오버드라이브",
+    description: "3연발 칩 에너지로 상대를 압도한다.",
+    power: 3,
+    speed: 5,
+    reach: 3,
+    projectile: "chip",
+    damage: 8,
+    velocity: 570,
+  },
+  {
+    id: "musk",
+    name: "일론 머스크",
+    en: "ELON MUSK",
+    short: "MUSK",
+    category: "THE DISRUPTOR",
+    className: "우주 개척자",
+    faction: "CAPITAL",
+    color: "#adadff",
+    skin: "#e5b59d",
+    hair: "#58493f",
+    outfit: "#e5e8e6",
+    quote: "다음 라운드는 화성에서.",
+    special: "스타십 런치",
+    description: "거대한 로켓을 발사해 판을 뒤집는다.",
+    power: 5,
+    speed: 2,
+    reach: 4,
+    projectile: "rocket",
+    damage: 26,
+    velocity: 355,
+  },
+  {
+    id: "socrates",
+    name: "소크라테스",
+    en: "SOCRATES",
+    short: "SOCRATES",
+    category: "THE QUESTIONER",
+    className: "논쟁의 달인",
+    faction: "PHILOSOPHY",
+    color: "#e8c487",
+    skin: "#cba386",
+    hair: "#c8c9b9",
+    outfit: "#dfd7bc",
+    quote: "너 자신을 알라. 그리고 막아라.",
+    special: "산파술의 파동",
+    description: "거대한 질문의 파동으로 틈을 만든다.",
+    power: 3,
+    speed: 3,
+    reach: 5,
+    projectile: "question",
+    damage: 20,
+    velocity: 420,
+  },
+  {
+    id: "plato",
+    name: "플라톤",
+    en: "PLATO",
+    short: "PLATO",
+    category: "THE IDEALIST",
+    className: "이데아 소환사",
+    faction: "PHILOSOPHY",
+    color: "#87d5e8",
+    skin: "#d5a580",
+    hair: "#4e4037",
+    outfit: "#90b9d2",
+    quote: "완벽한 한 방은 존재한다.",
+    special: "이데아의 빛",
+    description: "빛의 결정 두 개로 이상을 현실로.",
+    power: 4,
+    speed: 3,
+    reach: 4,
+    projectile: "crystal",
+    damage: 12,
+    velocity: 465,
+  },
+  {
+    id: "nietzsche",
+    name: "니체",
+    en: "FRIEDRICH NIETZSCHE",
+    short: "NIETZSCHE",
+    category: "THE REBEL",
+    className: "초인의 의지",
+    faction: "PHILOSOPHY",
+    color: "#ee9891",
+    skin: "#e0b392",
+    hair: "#493c34",
+    outfit: "#3d3540",
+    quote: "나를 쓰러뜨리지 못하면, 더 강해진다.",
+    special: "초인의 돌진",
+    description: "의지의 힘으로 순식간에 거리를 좁힌다.",
+    power: 5,
+    speed: 4,
+    reach: 2,
+    projectile: "dash",
+    damage: 23,
+    velocity: 720,
+  },
+  {
+    id: "buffett",
+    name: "워런 버핏",
+    en: "WARREN BUFFETT",
+    short: "BUFFETT",
+    category: "THE STRATEGIST",
+    className: "가치 투자자",
+    faction: "CAPITAL",
+    color: "#f1cd68",
+    skin: "#e3b89b",
+    hair: "#e1ded1",
+    outfit: "#344657",
+    quote: "좋은 한 방은 기다림에서 온다.",
+    special: "복리의 한 방",
+    description: "황금 코인을 날려 묵직한 수익을 낸다.",
+    power: 4,
+    speed: 2,
+    reach: 5,
+    projectile: "coin",
+    damage: 22,
+    velocity: 385,
+  },
 ];
-export const STAGES = { agora: 'NEON AGORA', city: 'CAPITAL SKYLINE', academy: 'MOONLIT ACADEMY' };
-export function fighterById(id) { return FIGHTERS.find(f => f.id === id) || FIGHTERS[0]; }
+export const STAGES = {
+  agora: "NEON AGORA",
+  city: "CAPITAL SKYLINE",
+  academy: "MOONLIT ACADEMY",
+};
+export function fighterById(id) {
+  return FIGHTERS.find((f) => f.id === id) || FIGHTERS[0];
+}
+
+const KITS = {
+  huang: {
+    affiliation: "NVIDIA / NVDA",
+    trait: "가죽 재킷",
+    traitDescription:
+      "재킷이 22 피해를 흡수. 파괴되면 티셔츠 차림으로 이동 +18%. 버린 재킷에는 양쪽 모두 미끄러진다.",
+    skills: [
+      [
+        "캔들이 현실이 된다",
+        "매수로 NVDA 캔들 발판 생성. 앉아서 쓰면 매도하고 발판을 낮춘다.",
+      ],
+      [
+        "콤보 컴파일",
+        "최근 공격을 실행하는 GPU 프로그램. 상대가 때리면 이동 명령이 반전된다.",
+      ],
+    ],
+    special: "액면분할 · GPU 오버드라이브",
+    description: "캔들을 작은 칩 발판으로 나누고 병렬 칩을 발사한다.",
+    counter: "프로그램을 때려 방향을 바꾸고 재킷 파괴 후 직접 압박하세요.",
+  },
+  musk: {
+    affiliation: "TSLA / SPACEX",
+    trait: "재사용 부스터",
+    traitDescription:
+      "발사 뒤 빈 부스터가 떨어진다. R로 회수해야 재발사 가능. 상대는 부스터를 차서 밀어낼 수 있다.",
+    skills: [
+      [
+        "목표주가에 발사",
+        "TSLA +8에 발사 예약. R 매수·S+R 매도로 발사 시점에 개입. 최대 7초.",
+      ],
+      [
+        "약관 업데이트",
+        "경기장 순환 / 발사체 중력 / 벽 반사 규칙을 예고하고 양쪽에 적용.",
+      ],
+    ],
+    special: "스타십 · 탑승객 미확인",
+    description: "누구나 올라탈 수 있는 로켓 발판. 로켓 위에서도 싸울 수 있다.",
+    counter:
+      "예약 발사대를 부수거나 부스터를 밀어내세요. 주가로 발사 시점도 바꿀 수 있습니다.",
+  },
+  socrates: {
+    affiliation: "산파술 / 너 자신을 알라",
+    trait: "끝나지 않는 질문",
+    traitDescription:
+      "강한 피격에 왜? 돌을 남긴다. 양쪽이 발판으로 쓰거나 밀 수 있다. 정의의 질문 돌을 깨면 규칙 종료.",
+    skills: [
+      ["산파술의 질문", "질문을 발사하고 돌을 남긴다. 말이 실제 지형이 된다."],
+      [
+        "전제 추출",
+        "발사대 목표가·시설 지분·최근 공격을 만질 수 있는 논점으로 꺼낸다. 근처 R 조작.",
+      ],
+    ],
+    special: "정의부터 합시다",
+    description:
+      "점프하는 발사체 / 공격을 저장하는 벽 / 물체가 되는 그림자를 양쪽에 선언한다.",
+    counter:
+      "질문 스위치를 깨거나 새 규칙을 활용하세요. 점프 정의에서는 W가 발사체를 띄웁니다.",
+  },
+  plato: {
+    affiliation: "이데아론 / 동굴의 비유",
+    trait: "원본을 지키는 철학자",
+    traitDescription:
+      "첫 설치물은 금빛 원본. 사본이 원본과 함께 이동. 원본이 깨지면 사본은 윤곽선이 되어 사라진다.",
+    skills: [
+      ["빛의 소유권", "밀고 회전할 수 있는 조명. 근처 R로 그림자 방향 변경."],
+      [
+        "이데아 설계도",
+        "원본과 사본 결정 발판을 생성. 원본을 밀면 함께 움직인다.",
+      ],
+    ],
+    special: "동굴의 비유 · 이상국가",
+    description:
+      "양쪽의 피격 위치가 그림자로 바뀌고 가까운 시설도 원본에 연결한다.",
+    counter:
+      "몸 대신 점선 그림자를 공격하세요. 조명을 회전하거나 금빛 원본을 파괴하세요.",
+  },
+  nietzsche: {
+    affiliation: "영원회귀 / 아모르 파티",
+    trait: "상처가 남기는 의지",
+    traitDescription:
+      "체력 50 이하에서 코트가 찢어짐. 영원회귀가 최근 공격 하나의 반복으로 변화. 자신의 잔상에도 맞는다.",
+    skills: [
+      ["힘에의 의지", "돌파 공격으로 다음 영원회귀의 경로를 설계한다."],
+      ["영원회귀", "최근 양쪽 공격 궤적을 재생한다. 자신의 과거 공격도 주의."],
+    ],
+    special: "아모르 파티 · 선택을 감당하라",
+    description: "매도·자발적 철거를 잠시 금지하고 과거의 공격을 재생한다.",
+    counter: "예고선을 읽고 니체를 자신의 과거 공격으로 유도하세요.",
+  },
+  buffett: {
+    affiliation: "BERKSHIRE HATHAWAY / BRK.B",
+    trait: "서류가방은 본체다",
+    traitDescription:
+      "가방 근처에서만 시설 명령 가능. R로 내려놓고 회수. 가방이 밀려도 시설은 마지막 명령을 계속 수행.",
+    skills: [
+      [
+        "적대적 인수",
+        "가까운 상대 시설의 지분 34% 매수. 과반이면 인수. 시설이 없으면 투자 거점 생성.",
+      ],
+      [
+        "그 공격, 상장합니다",
+        "발사체를 경매로 전환. 종 근처 R 입찰. 전투 중 마지막 입찰자가 공격을 소유.",
+      ],
+    ],
+    special: "버크셔 주주총회",
+    description: "BNSF 열차가 캐릭터·서류가방·시설을 함께 운반한다.",
+    counter:
+      "가방을 밀어 명령 위치를 바꾸거나 R로 지분을 되사고 경매에 참여하세요.",
+  },
+};
+for (const f of FIGHTERS) Object.assign(f, KITS[f.id]);
+export const DISCOVERIES = {
+  "jacket-slip": ["CEO의 흔적", "버린 재킷에 미끄러졌습니다."],
+  "rocket-rider": ["탑승객 미확인", "스타십에 올라탔습니다."],
+  "hostile-takeover": ["좋은 공격, 새 소유주", "상대 시설을 인수했습니다."],
+  "question-switch": ["질문에도 답이 있다", "질문을 깨서 정의를 종료했습니다."],
+  "self-echo": ["그 선택은 당신의 것", "자신의 과거 공격에 맞았습니다."],
+  "moving-portfolio": [
+    "움직이는 지주회사",
+    "열차가 가방이나 시설을 운반했습니다.",
+  ],
+  "parallel-patch": [
+    "버그가 아니라 업데이트",
+    "GPU 프로그램이 새 물리 규칙을 따랐습니다.",
+  ],
+  "solid-shadow": ["그림자도 물체다", "정의가 그림자를 발판으로 만들었습니다."],
+  "ownership-dispute": [
+    "과거의 소유권 분쟁",
+    "영원회귀가 경매를 다시 열었습니다.",
+  ],
+  "shared-idea": ["원본은 하나다", "다른 시설을 이데아에 연결했습니다."],
+};
