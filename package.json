@@ -1,14 +1,15 @@
 {
   "name": "bizzare-battle",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
-  "description": "An original browser fighting game starring philosophers and business icons.",
+  "description": "철학자와 자본가가 맞붙는 브라우저 아케이드 격투 게임. 상대의 기술을 논파해 빼앗고, 라운드마다 세계의 법칙이 바뀐다.",
   "scripts": {
     "dev": "node scripts/server.mjs",
     "start": "node scripts/server.mjs",
+    "check": "node scripts/check.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check src/main.js && node --check src/engine.js && node --check src/world.js && node --check src/roster.js && node --check src/art.js && node --check scripts/server.mjs"
+    "balance": "node scripts/balance.mjs hard 1"
   },
   "engines": {
     "node": ">=20"
